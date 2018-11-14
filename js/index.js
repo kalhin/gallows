@@ -42,7 +42,7 @@ function compareValueBtnWithLetterInRandomWord(){
 //підрахунок кількості спроб (5) та завершення гри
 document.getElementById("btn").addEventListener("click", counter);
    
-let count = 5;
+let count = 9;
 function counter(){
     if (count >= 0) {
         document.getElementById("counter").textContent = count;
