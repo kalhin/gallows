@@ -3,10 +3,10 @@ document.getElementById("btn-start").addEventListener("click", toShowContainer);
 function toShowContainer(){
     document.getElementById('container').style.display = "block";
     document.getElementById('btn-start').style.display = "none";
-}
+
 
 //набір довільних слів (змінити на базу)
-const words = ["кіт", "пес"];
+const words = ["кіт", "курча", "собака"];
 
 //рандомний вибір слова із масиву (бази)
 let randomNumber = Math.floor(Math.random() * words.length);
@@ -39,10 +39,10 @@ function compareValueBtnWithLetterInRandomWord(){
     //дезактивує натиснуту кнопку:
     document.activeElement.disabled = true;
 } 
-//підрахунок кількості спроб (5) та завершення гри
+//підрахунок кількості спроб (5) та завершення гри(модальне вікно)
 document.getElementById("btn").addEventListener("click", counter);
    
-let count = 9;
+let count = 5;
 function counter(){
     if (count >= 0) {
         document.getElementById("counter").textContent = count;
@@ -55,5 +55,22 @@ function counter(){
     if (document.querySelector("p").innerText === randomWord){
         $("#exampleModalCenter").modal("show");
         document.getElementById("modalText").textContent = "Вітання! Ви справжній ерудит";
+    }
+}
+//заборона кліку поза модальним вікном
+//$(document).mouseup(function (click){ 
+//	const modal = $("#exampleModalCenter");
+//	if (!modal.is(click.target)){ // если клик был не по нашему блоку
+//		modal.hide(); // скрываем его
+//	}
+//});
+
+//очищення тегу <p> та перезавантаження слова
+    document.getElementById("button-play-more").addEventListener("click", reloadgame);
+    function reloadgame(){
+        document.querySelector("p").innerText = "";
+        $("#exampleModalCenter").modal("hide");
+        $("[name]").prop("disabled",false);
+        //toShowContainer();
     }
 }

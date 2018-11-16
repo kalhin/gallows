@@ -16,7 +16,7 @@
     box-shadow: 9px 7px 20px 0px #0000004d;
 }
 
-#button {
+[name] {
     width: 61px;
     height: 64px;
     font-size: 25px;
