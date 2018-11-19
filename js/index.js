@@ -5,7 +5,7 @@ function toShowContainer(){
     document.getElementById('btn-start').style.display = "none";
 }
 //набір довільних слів (змінити на базу)
-const words = ["собака", "кіт", "кінь", "пес", "півень"];
+const words = ["кіт", "кінь", "пес", "півень"];
 
 //рандомний вибір слова із масиву (бази)
 const randomNumber = Math.floor(Math.random() * words.length);
